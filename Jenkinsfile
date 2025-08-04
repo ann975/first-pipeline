@@ -4,6 +4,10 @@ pipeline {
             label 'docker-jenkins-agent'
             }
       }
+
+    triggers{
+        pollScm '*/5 * * * *'
+    }
     stages {
         stage('Build') {
             steps {
